@@ -1,26 +1,32 @@
-# 🧠 Quant Strategy Suite
+# Quant Strategy Suite | Quantitative Research
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+The Quant Strategy Suite is a modular framework for advanced market analysis, signal generation, and statistical validation of systematic trading strategies.
 
-> **Property of Castle Trade LLC.** Advanced quantitative research and strategy development suite.
+## Mathematical Core Logic
 
-## About
-`quant-strategy-suite` contains the research frameworks and strategy templates used by Castle Trade LLC to identify and exploit market inefficiencies. This repository focuses on the mathematical foundations of trading—bridging the gap between statistical research and production-ready execution logic.
+The suite is built upon multi-regime mathematical frameworks to exploit market structural inefficiencies.
 
-### Research Frameworks
-- **Mean Reversion Analysis**: Tools for stationarity testing and rolling Z-Score identification to detect statistical outliers in cointegrated pairs.
-- **Volume-Weighted Breakouts**: Logic for identifying structural shifts confirmed by institutional order flow and volume spikes.
-- **Volatility Compression (Squeeze)**: ATR-based analyzers designed to detect "The Squeeze"—periods of low volatility that often precede explosive market moves.
+### Mean Reversion
+Utilizes statistical arbitrage patterns based on the cointegration of asset pairs. The engine identifies temporary price dislocations from a high-probability rolling mean, enabling entries at statistically significant Z-Score thresholds.
 
-## Repository Structure
-- `notebooks/mean_reversion_research.ipynb`: Jupyter framework for statistical research on synthetic and historical data.
-- `strategies/breakout_logic.py`: Production-grade boilerplate for breakout detection with volume confirmation.
-- `analysis/squeeze_analyzer.py`: ATR-based volatility analysis module.
+### Momentum & Volume Analysis
+Incorporates institutional volume profiles and volatility-adjusted momentum indicators (ATR-based) to identify high-conviction trend expansions and liquidity-driven breakouts.
 
-## Mathematical Foundation
-- **Cointegration**: Utilizing ADF (Augmented Dickey-Fuller) tests to verify stable long-term relationships between assets.
-- **ATR (Average True Range)**: The primary metric for quantifying market noise and volatility environment.
-- **Volume Delta**: Analysis of relative volume to confirm the validity of price action.
+## Backtesting Methodology (Anti-Overfitting)
+
+To ensure institutional robustness and avoid the pitfalls of curve-fitting, the following protocols are strictly enforced:
+
+1. **Walk-Forward Analysis (WFA)**: Continuous validation of strategy parameters on out-of-sample data.
+2. **Monte Carlo Sensitivity**: Stress-testing signal performance against synthetic market noise.
+3. **Slippage & Impact Modeling**: Realistic execution simulation including variable commissions and liquidity exhaustion.
+4. **Data Hygiene**: Rigorous cleaning of survivorship bias and look-ahead bias from history datasets.
+
+## Technical Components
+- **Volatility Engine**: High-performance implementations of ATR and Institutional Squeeze logic.
+- **Validation Notebooks**: Standardized documentation for research reproducibility.
+- **Sample Dataset**: High-fidelity market data slices for initial parameter calibration.
 
 ---
-*Disclaimer: This repository contains research skeletons and does not reveal specific alpha-generating parameters, hyper-parameters, or proprietary asset pairs used in live funds. Unauthorized duplication of Castle Trade LLC IP is prohibited.*
+**Technical Note**: This repository serves as a research workbench. Execution alpha and proprietary parameter sets are restricted.
+
+(c) 2026 Castle Trade LLC. Proprietary and Confidential.
