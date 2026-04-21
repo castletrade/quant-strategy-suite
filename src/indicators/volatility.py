@@ -6,7 +6,6 @@ Copyright: (c) 2026 Castle Trade LLC. Quantitative Research Infrastructure.
 
 import logging
 import pandas as pd
-import numpy as np
 from typing import Optional
 
 logger = logging.getLogger(__name__)
