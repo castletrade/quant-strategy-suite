@@ -27,7 +27,8 @@ class TestQuantitativeMetrics(unittest.TestCase):
         std_return: float = self.returns.std()
         
         # In a constant return scenario, std is 0; handle edge cases for robustness
-        sharpe: float = (mean_return / std_return * annual_factor) if std_return != 0 else 0.0
+        # Use a small epsilon to handle floating point near-zero values
+        sharpe: float = (mean_return / std_return * annual_factor) if std_return > 1e-9 else 0.0
         
         self.assertIsInstance(sharpe, float)
         self.assertAlmostEqual(sharpe, 0.0, places=7) # Correct for zero variance
