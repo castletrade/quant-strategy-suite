@@ -7,7 +7,6 @@ Copyright: (c) 2026 Castle Trade LLC. Quantitative Research Infrastructure.
 import unittest
 import numpy as np
 import pandas as pd
-from typing import List
 
 class TestQuantitativeMetrics(unittest.TestCase):
     """
