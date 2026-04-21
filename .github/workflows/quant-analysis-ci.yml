@@ -25,4 +25,6 @@ jobs:
       run: ruff check .
       
     - name: Strategy Validation
+      env:
+        PYTHONPATH: .
       run: pytest tests/

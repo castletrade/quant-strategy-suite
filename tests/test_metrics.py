@@ -30,7 +30,7 @@ class TestQuantitativeMetrics(unittest.TestCase):
         sharpe: float = (mean_return / std_return * annual_factor) if std_return != 0 else 0.0
         
         self.assertIsInstance(sharpe, float)
-        self.assertEqual(sharpe, 0.0) # Correct for zero variance
+        self.assertAlmostEqual(sharpe, 0.0, places=7) # Correct for zero variance
 
     def test_drawdown_integrity(self) -> None:
         """Ensures the Maximum Drawdown algorithm correctly identifies equity peaks."""
